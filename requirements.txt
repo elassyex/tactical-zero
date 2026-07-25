@@ -2,3 +2,7 @@ requests>=2.32.0
 pyyaml>=6.0
 ollama>=0.6.0
 openai>=1.0.0
+gitpython>=3.0
+arjun>=1.7
+paramspider>=1.5
+jsleak>=0.2
