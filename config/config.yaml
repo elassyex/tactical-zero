@@ -1,0 +1,37 @@
+# TACTICAL ZERO Configuration
+# Copy this to config/config.yaml and customize for your environment
+
+# API Keys (can also use env vars)
+shodan_api_key: ""
+vt_api_key: ""
+openai_api_key: ""
+
+# Ollama configuration
+ollama_host: "http://localhost:11434"
+model: "bugbounty-hunter"
+
+# Nuclei templates directory
+nuclei_templates_dir: "/Users/mac/nuclei-templates"
+
+# Notifications
+slack_webhook: ""
+discord_webhook: ""
+telegram_bot_token: ""
+telegram_chat_id: ""
+
+# Focus mode: all, api, web, infrastructure, mobile, cloud
+focus: all
+
+# Noise filtering: low, medium, high
+noise_filter_level: high
+
+# Custom scripts directory
+custom_scripts_dir: "./custom_scripts"
+
+# Wordlists paths (auto-detected if available, override here if needed)
+wordlists:
+  dns_top: "/usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt"
+  dns_jhaddix: "/usr/share/wordlists/seclists/Discovery/DNS/dns-Jhaddix.txt"
+  dir_common: "/usr/share/wordlists/seclists/Discovery/Web-Content/common.txt"
+  dir_raft_med: "/usr/share/wordlists/seclists/Discovery/Web-Content/raft-medium-directories.txt"
+  params: "/usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt"

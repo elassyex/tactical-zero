@@ -1,0 +1,254 @@
+{
+  "sessions": [
+    {
+      "id": 1,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-16T08:28:17.132481",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [
+        {
+          "name": "full_recon",
+          "success": true,
+          "metadata": {},
+          "timestamp": "2026-07-16T08:28:17.132723"
+        }
+      ],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 2,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-16T17:54:27.666677",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [
+        {
+          "name": "full_recon",
+          "success": true,
+          "metadata": {},
+          "timestamp": "2026-07-16T17:54:31.475534"
+        }
+      ],
+      "outcome": "completed",
+      "ended_at": "2026-07-16T17:54:32.486841"
+    },
+    {
+      "id": 3,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-16T18:13:17.070536",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [
+        {
+          "name": "full_recon",
+          "success": true,
+          "metadata": {},
+          "timestamp": "2026-07-16T18:13:22.272558"
+        }
+      ],
+      "outcome": "completed",
+      "ended_at": "2026-07-16T18:13:23.283034"
+    },
+    {
+      "id": 4,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-16T18:14:37.836715",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [
+        {
+          "name": "full_recon",
+          "success": true,
+          "metadata": {},
+          "timestamp": "2026-07-16T18:38:22.605413"
+        }
+      ],
+      "outcome": "completed",
+      "ended_at": "2026-07-16T18:38:23.634027"
+    },
+    {
+      "id": 5,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-16T19:31:41.762238",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [
+        {
+          "name": "full_recon",
+          "success": true,
+          "metadata": {},
+          "timestamp": "2026-07-16T21:02:29.157235"
+        }
+      ],
+      "outcome": "completed",
+      "ended_at": "2026-07-16T21:02:36.808140"
+    },
+    {
+      "id": 6,
+      "target": "http://httpbin.org",
+      "timestamp": "2026-07-17T04:24:12.750606",
+      "config": {
+        "domain": "httpbin.org",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 7,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-17T14:37:01.264029",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 8,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-17T14:40:27.910195",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 9,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-17T15:14:09.539801",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 10,
+      "target": "http://testphp.vulnweb.com",
+      "timestamp": "2026-07-17T15:18:34.235472",
+      "config": {
+        "domain": "testphp.vulnweb.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 11,
+      "target": "https://perlego.com",
+      "timestamp": "2026-07-17T15:39:59.534618",
+      "config": {
+        "domain": "perlego.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 12,
+      "target": "https://perlego.com",
+      "timestamp": "2026-07-17T15:58:11.878012",
+      "config": {
+        "domain": "perlego.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 13,
+      "target": "https://perlego.com",
+      "timestamp": "2026-07-17T16:12:33.759347",
+      "config": {
+        "domain": "perlego.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 14,
+      "target": "https://perlego.com",
+      "timestamp": "2026-07-17T16:44:04.124470",
+      "config": {
+        "domain": "perlego.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 15,
+      "target": "https://perlego.com",
+      "timestamp": "2026-07-17T16:48:55.032496",
+      "config": {
+        "domain": "perlego.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [
+        {
+          "name": "full_recon",
+          "success": true,
+          "metadata": {},
+          "timestamp": "2026-07-17T18:39:59.936176"
+        }
+      ],
+      "outcome": "in_progress"
+    },
+    {
+      "id": 16,
+      "target": "https://ory.com",
+      "timestamp": "2026-07-20T05:10:06.564998",
+      "config": {
+        "domain": "ory.com",
+        "mode": "unified"
+      },
+      "findings": [],
+      "techniques_used": [],
+      "outcome": "in_progress"
+    }
+  ],
+  "successful_patterns": {},
+  "failed_patterns": {},
+  "target_scores": {},
+  "technique_effectiveness": {
+    "full_recon": {
+      "success": 6,
+      "failure": 0,
+      "total": 6
+    }
+  },
+  "template_performance": {},
+  "noise_indicators": []
+}
