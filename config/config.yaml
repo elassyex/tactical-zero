@@ -1,15 +1,26 @@
 # TACTICAL ZERO Configuration
-# Copy this to config/config.yaml and customize for your environment
 
-# API Keys (can also use env vars)
+# API Keys
 shodan_api_key: ""
 vt_api_key: ""
 openai_api_key: ""
 
-# AI Provider: "openai" or "ollama"
-# On Colab, use OpenAI. Locally, use Ollama.
-ollama_host: "http://localhost:11434"
+# AI Provider: "openai", "ollama", "custom", or "" (auto-detect)
+# - openai: uses OpenAI API (needs openai_api_key)
+# - ollama: uses local Ollama server
+# - custom: any OpenAI-compatible API (set ai_base_url)
+ai_provider: ""
+ai_base_url: ""
+ai_api_key: ""
+
+# Model name (depends on provider)
+# OpenAI: gpt-4o, gpt-4o-mini, gpt-3.5-turbo
+# Ollama: bugbounty-hunter, llama3, mistral, etc
+# Custom: any model your endpoint supports
 model: "gpt-4o"
+
+# Ollama configuration (only used if ai_provider=ollama)
+ollama_host: "http://localhost:11434"
 
 # Nuclei templates directory
 nuclei_templates_dir: "/Users/mac/nuclei-templates"

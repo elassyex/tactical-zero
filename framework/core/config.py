@@ -14,9 +14,12 @@ class FrameworkConfig:
     shodan_api_key: str = ""
     vt_api_key: str = ""
     nuclei_templates_dir: str = "~/.local/nuclei-templates"
-    model: str = "bugbounty-hunter"
+    model: str = "gpt-4o"
     ollama_host: str = "http://localhost:11434"
     openai_api_key: str = ""
+    ai_provider: str = ""
+    ai_base_url: str = ""
+    ai_api_key: str = ""
     skip_slow: bool = False
     mode: str = "full"
     focus: str = "all"
@@ -55,6 +58,9 @@ class FrameworkConfig:
             model=args.model,
             ollama_host=args.ollama_host,
             openai_api_key=args.openai_api_key,
+            ai_provider=getattr(args, 'ai_provider', '') or os.getenv('AI_PROVIDER', ''),
+            ai_base_url=getattr(args, 'ai_base_url', '') or os.getenv('AI_BASE_URL', ''),
+            ai_api_key=getattr(args, 'ai_api_key', '') or os.getenv('AI_API_KEY', ''),
             skip_slow=args.skip_slow,
             mode=args.mode,
             focus=args.focus,

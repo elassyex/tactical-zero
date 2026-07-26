@@ -253,15 +253,20 @@ ALL_SKILLS: Dict[str, BBSkill] = {
 
 
 class AIConnector:
-    """Unified AI provider connector (Ollama, OpenAI, etc)."""
+    """Unified AI provider connector (Ollama, OpenAI, Custom/OpenAI-compatible)."""
 
     def __init__(self, config):
         self.config = config
         self.provider = self._detect_provider()
         self._conversation_history: List[Dict[str, str]] = []
         self._rate_limit_map: Dict[str, float] = {}
+        print(f"[AI] Provider: {self.provider} | Model: {self.config.model}")
 
     def _detect_provider(self) -> str:
+        if self.config.ai_provider:
+            return self.config.ai_provider
+        if self.config.ai_base_url:
+            return "custom"
         if self.config.has_openai():
             return "openai"
         return "ollama"
@@ -273,11 +278,15 @@ class AIConnector:
             time.sleep(0.5 - (now - last))
         elif provider == "openai" and now - last < 0.2:
             time.sleep(0.2 - (now - last))
+        elif provider == "custom" and now - last < 0.3:
+            time.sleep(0.3 - (now - last))
         self._rate_limit_map[provider] = time.time()
 
     def chat(self, messages: List[Dict[str, str]], temperature: float = 0.2, max_tokens: int = 4000) -> str:
         if self.provider == "openai":
             return self._chat_openai(messages, temperature, max_tokens)
+        if self.provider == "custom":
+            return self._chat_custom(messages, temperature, max_tokens)
         return self._chat_ollama(messages, temperature, max_tokens)
 
     def _chat_ollama(self, messages, temperature, max_tokens) -> str:
@@ -300,7 +309,7 @@ class AIConnector:
             import openai
             client = openai.OpenAI(api_key=self.config.openai_api_key)
             r = client.chat.completions.create(
-                model="gpt-4o" if "gpt-4" in self.config.model else self.config.model,
+                model=self.config.model,
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
@@ -308,6 +317,26 @@ class AIConnector:
             return r.choices[0].message.content
         except Exception as e:
             return f"[OPENAI ERROR: {e}]"
+
+    def _chat_custom(self, messages, temperature, max_tokens) -> str:
+        """OpenAI-compatible API (OpenRouter, LM Studio, vLLM, Together, Groq, etc)."""
+        self._rate_limit("custom")
+        try:
+            import openai
+            kwargs = {
+                "base_url": self.config.ai_base_url,
+                "api_key": self.config.ai_api_key or "none",
+            }
+            client = openai.OpenAI(**kwargs)
+            r = client.chat.completions.create(
+                model=self.config.model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+            )
+            return r.choices[0].message.content
+        except Exception as e:
+            return f"[CUSTOM AI ERROR: {e}]"
 
     def ask(self, prompt: str, system: str = "", temperature: float = 0.2, max_tokens: int = 4000) -> str:
         messages = []
