@@ -6,9 +6,10 @@ shodan_api_key: ""
 vt_api_key: ""
 openai_api_key: ""
 
-# Ollama configuration
+# AI Provider: "openai" or "ollama"
+# On Colab, use OpenAI. Locally, use Ollama.
 ollama_host: "http://localhost:11434"
-model: "bugbounty-hunter"
+model: "gpt-4o"
 
 # Nuclei templates directory
 nuclei_templates_dir: "/Users/mac/nuclei-templates"
